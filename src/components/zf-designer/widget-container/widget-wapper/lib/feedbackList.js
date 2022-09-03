@@ -5,105 +5,105 @@ export default [
     key: 'alert',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '标记',
     key: 'badge',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '对话框',
     key: 'dialog',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '抽屉',
     key: 'drawer',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '信息',
     key: 'message',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '模态框',
     key: 'model',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '通知',
     key: 'notification',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '弹出确认',
     key: 'popconfirm',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '弹出信息',
     key: 'popover',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '弹出选择',
     key: 'popselect',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '进度',
     key: 'progress',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '结果页',
     key: 'result',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '骨架屏',
     key: 'skeleton',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '加载',
     key: 'spin',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '弹出提示',
     key: 'tooltip',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   
 ]

@@ -1,5 +1,5 @@
 <template>
-  <div class="widget-container" :style="{ left: `-${isExtend ? 0 : compPanelWidth}px` }">
+  <div class="widget-container" :style="{ left: `-${isExtend ? 0 : compPanelWidth + 12}px` }">
     <n-tabs type="line" animated justify-content="space-evenly">
       <n-tab-pane name="oasis" tab="组件库">
         <widget-wapper></widget-wapper>
@@ -36,11 +36,13 @@ const handlerClick = () => {
 
 <style lang="scss" scoped>
   .widget-container{
+    background: #fff;
     transition: all 0.3s ease;
     position: relative;
     float: left;
+    margin: 12px;
     width: 250px;
-    height: 100%;
+    height: calc(100% - 24px);
     box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
     .toggle-button{
       position: absolute;
@@ -54,6 +56,7 @@ const handlerClick = () => {
       box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
       text-align: center;
       cursor: pointer;
+      z-index: 9;
       .btn-show{
         display: inline-block;
         line-height: 26px;

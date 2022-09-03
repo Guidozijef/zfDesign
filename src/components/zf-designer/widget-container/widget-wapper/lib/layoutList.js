@@ -5,21 +5,21 @@ export default [
     key: 'layout',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '栅格',
     key: 'grid',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '间距',
     key: 'space',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   
 ]

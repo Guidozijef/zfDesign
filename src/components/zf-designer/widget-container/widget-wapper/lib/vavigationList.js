@@ -5,63 +5,63 @@ export default [
     key: 'affix',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '侧边导航',
     key: 'anchor',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '回到顶部',
     key: 'backTop',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '面包屑',
     key: 'breadcrumb',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '加载条',
     key: 'loadingBar',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '菜单',
     key: 'menu',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '分页',
     key: 'pagination',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '步骤',
     key: 'steps',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   {
     name: '标签页',
     key: 'Tabs',
     icon: '',
     type: '',
-    props: {}
+    options: {}
   },
   
 ]
