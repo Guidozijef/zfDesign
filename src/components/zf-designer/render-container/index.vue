@@ -3,7 +3,7 @@
     <div class="page-canvas">
       <draggable :list="widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost', animation: 200}"
                tag="transition-group" :component-data="{name: 'fade'}"
-               handle=".drag-handler" @end="(evt) => onGridDragEnd(evt, widgetList)"
+               @end="(evt) => onGridDragEnd(evt, widgetList)"
                @add="(evt) => onGridDragAdd(evt, widgetList)"
                @update="onGridDragUpdate" :move="checkContainerMove">
         <template #item="{ element: widget, index: swIdx }">
