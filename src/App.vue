@@ -2,7 +2,7 @@
 <template>
   <zf-header></zf-header>
 
-  <RouterView />
+    <RouterView style="height:calc(100% - 40px)" />
 </template>
 
 <script setup>

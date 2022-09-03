@@ -1,13 +1,13 @@
 <template>
-  <n-scrollbar style="max-height: 700px">
+  <n-scrollbar style="max-height: 720px">
     <div style="padding:0 12px">
-      <n-collapse arrow-placement="right">
-      <n-collapse-item v-for="item in collapseList" :key="item.key" :title="item.collapseName" :name="item.key">
-        <div class="widget-wapper">
-          <widget-item :item="comp" v-for="comp in item.compList" :key="comp.key"></widget-item>
-        </div>
-      </n-collapse-item>
-    </n-collapse>
+      <n-collapse arrow-placement="right" :default-expanded-names="[0]">
+        <n-collapse-item v-for="item in collapseList" :key="item.key" :title="item.collapseName" :name="item.key">
+          <div class="widget-wapper">
+            <widget-item :item="comp" v-for="comp in item.compList" :key="comp.key"></widget-item>
+          </div>
+        </n-collapse-item>
+      </n-collapse>
     </div>
   </n-scrollbar>
 </template>
