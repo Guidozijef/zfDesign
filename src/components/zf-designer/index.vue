@@ -1,8 +1,13 @@
 <template>
-  <div>designer content</div>
+  <div>
+    <widget-container></widget-container>
+  </div>
 </template>
 
 <script setup>
+
+import WidgetContainer from './widget-container'
+
 
 
 </script>
