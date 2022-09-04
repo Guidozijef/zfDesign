@@ -1,3 +1,5 @@
+import { guid } from '@/utils'
+
 // 导航组件
 export default [
   {
@@ -5,6 +7,7 @@ export default [
     key: 'affix',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -12,6 +15,7 @@ export default [
     key: 'anchor',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -19,6 +23,7 @@ export default [
     key: 'backTop',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -26,6 +31,7 @@ export default [
     key: 'breadcrumb',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -33,6 +39,7 @@ export default [
     key: 'loadingBar',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -40,6 +47,7 @@ export default [
     key: 'menu',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -47,6 +55,7 @@ export default [
     key: 'pagination',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -54,6 +63,7 @@ export default [
     key: 'steps',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -61,6 +71,7 @@ export default [
     key: 'Tabs',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   

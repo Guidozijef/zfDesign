@@ -1,3 +1,5 @@
+import { guid } from '@/utils'
+
 // 工具组件
 export default [
   {
@@ -5,6 +7,7 @@ export default [
     key: 'collapseTransition',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   

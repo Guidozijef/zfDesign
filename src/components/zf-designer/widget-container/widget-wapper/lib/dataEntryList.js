@@ -1,3 +1,5 @@
+import { guid } from '@/utils'
+
 // 数据录入组件
 export default [
   {
@@ -5,6 +7,7 @@ export default [
     key: 'autoComplete',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -12,6 +15,7 @@ export default [
     key: 'cascader',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -19,6 +23,7 @@ export default [
     key: 'colorPicker',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -26,6 +31,7 @@ export default [
     key: 'checkbox',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -33,6 +39,7 @@ export default [
     key: 'datePicker',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -40,6 +47,7 @@ export default [
     key: 'dynamicInput',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -47,6 +55,7 @@ export default [
     key: 'dynamicTags',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -54,6 +63,7 @@ export default [
     key: 'form',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -61,6 +71,7 @@ export default [
     key: 'input',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -68,6 +79,7 @@ export default [
     key: 'inputNumber',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -75,6 +87,7 @@ export default [
     key: 'mention',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -82,6 +95,7 @@ export default [
     key: 'radio',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -89,6 +103,7 @@ export default [
     key: 'rate',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -96,6 +111,7 @@ export default [
     key: 'select',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -103,6 +119,7 @@ export default [
     key: 'slider',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -110,6 +127,7 @@ export default [
     key: 'switch',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -117,6 +135,7 @@ export default [
     key: 'timePicker',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -124,6 +143,7 @@ export default [
     key: 'transfer',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -131,6 +151,7 @@ export default [
     key: 'treeSelect',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -138,6 +159,7 @@ export default [
     key: 'upload',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   

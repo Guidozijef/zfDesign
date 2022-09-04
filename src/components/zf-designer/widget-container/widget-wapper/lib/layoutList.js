@@ -1,3 +1,5 @@
+import { guid } from '@/utils'
+
 // 布局组件
 export default [
   {
@@ -5,6 +7,7 @@ export default [
     key: 'layout',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -12,6 +15,7 @@ export default [
     key: 'grid',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -19,6 +23,7 @@ export default [
     key: 'space',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   

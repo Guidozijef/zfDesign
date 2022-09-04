@@ -1,3 +1,6 @@
+import { guid } from '@/utils'
+
+
 // 数据展示组件
 export default [
   {
@@ -5,6 +8,7 @@ export default [
     key: 'calendar',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -12,6 +16,7 @@ export default [
     key: 'countdown',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -19,6 +24,7 @@ export default [
     key: 'code',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -26,6 +32,7 @@ export default [
     key: 'dataTable',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -33,6 +40,7 @@ export default [
     key: 'descriptions',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -40,6 +48,7 @@ export default [
     key: 'empty',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -47,6 +56,7 @@ export default [
     key: 'image',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -54,6 +64,7 @@ export default [
     key: 'list',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -61,6 +72,7 @@ export default [
     key: 'log',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -68,6 +80,7 @@ export default [
     key: 'numberAnimation',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -75,6 +88,7 @@ export default [
     key: 'statistic',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -82,6 +96,7 @@ export default [
     key: 'table',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -89,6 +104,7 @@ export default [
     key: 'thing',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -96,6 +112,7 @@ export default [
     key: 'timeline',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -103,6 +120,7 @@ export default [
     key: 'tree',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
 ]

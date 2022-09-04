@@ -1,3 +1,6 @@
+
+import { guid } from '@/utils'
+
 // 反馈组件
 export default [
   {
@@ -5,6 +8,7 @@ export default [
     key: 'alert',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -12,6 +16,7 @@ export default [
     key: 'badge',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -19,6 +24,7 @@ export default [
     key: 'dialog',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -26,6 +32,7 @@ export default [
     key: 'drawer',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -33,6 +40,7 @@ export default [
     key: 'message',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -40,6 +48,7 @@ export default [
     key: 'model',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -47,6 +56,7 @@ export default [
     key: 'notification',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -54,6 +64,7 @@ export default [
     key: 'popconfirm',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -61,6 +72,7 @@ export default [
     key: 'popover',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -68,6 +80,7 @@ export default [
     key: 'popselect',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -75,6 +88,7 @@ export default [
     key: 'progress',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -82,6 +96,7 @@ export default [
     key: 'result',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -89,6 +104,7 @@ export default [
     key: 'skeleton',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -96,6 +112,7 @@ export default [
     key: 'spin',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   {
@@ -103,6 +120,7 @@ export default [
     key: 'tooltip',
     icon: '',
     type: '',
+    id: guid(),
     options: {}
   },
   
