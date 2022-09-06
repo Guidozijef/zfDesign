@@ -32,12 +32,9 @@ const handlerClick = () => {
 <style lang="scss" scoped>
   .config-container{
     transition: all 0.3s ease;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 12px;
+    float: right;
     width: 250px;
-    height: calc(100% - 24px);
+    height: 100%;
     background: #fff;
     box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
   }

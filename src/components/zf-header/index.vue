@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup name="zf-header">
 
 
 </script>
@@ -15,7 +15,8 @@
 .zf-header {
   width: 100%;
   height: 40px;
-  border-bottom: 1px solid #666;
+  box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
+
 }
   
 </style>

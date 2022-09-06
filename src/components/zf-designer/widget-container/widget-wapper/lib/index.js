@@ -2,17 +2,17 @@ import { guid } from '@/utils'
 
 
 import currencyList from './currencyList.jsx'
-import dataEntryList from './dataEntryList'
-import dataDisplayList from './dataDisplayList'
-import navigationList from './vavigationList'
-import feedbackList from './feedbackList'
-import layoutList from './layoutList'
-import utilsList from './utilsList'
+import dataEntryList from './dataEntryList.jsx'
+import dataDisplayList from './dataDisplayList.jsx'
+import navigationList from './vavigationList.jsx'
+import feedbackList from './feedbackList.jsx'
+import layoutList from './layoutList.jsx'
+import utilsList from './utilsList.jsx'
 
 export default [
   {
     collapseName: '通用组件',
-    key: guid(),
+    key: 0,
     compList: currencyList,
   },
   {

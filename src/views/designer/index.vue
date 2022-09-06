@@ -2,7 +2,7 @@
   <div><zf-designer></zf-designer></div>
 </template>
 
-<script setup>
+<script setup name="designer">
 import  ZfDesigner from '@/components/zf-designer/index.vue'
 
 

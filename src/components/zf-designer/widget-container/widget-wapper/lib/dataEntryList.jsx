@@ -64,7 +64,27 @@ export default [
     icon: '',
     type: '',
     id: guid(),
-    options: {}
+    options: {
+      ref: 'formRef',
+      inline: true,
+      model: {
+        name: ''
+      },
+      rules: {
+        name: {
+          required: true,
+          message: '请输入姓名',
+          trigger: 'blur'
+        },
+      },
+      size: 'small'
+    },
+    children: (h, { options, designer }) => {
+      console.log('dasigner', designer)
+      return <n-form-item label="姓名" path="name">
+      <n-input v-model:value={ designer.formValue.name } placeholder="输入姓名" />
+    </n-form-item>
+    }
   },
   {
     name: '文本输入',

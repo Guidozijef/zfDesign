@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup name="widget-container">
 import { ref } from 'vue'
 import WidgetWapper from './widget-wapper'
 
@@ -40,9 +40,8 @@ const handlerClick = () => {
     transition: all 0.3s ease;
     position: relative;
     float: left;
-    margin: 12px;
     width: 250px;
-    height: calc(100% - 24px);
+    height: 100%;
     box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
     .toggle-button{
       position: absolute;

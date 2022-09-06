@@ -39,32 +39,14 @@ export default [
   },
   {
     name: "轮播图",
-    key: "carousel",
+    key: "carousel-custom",
     icon: "",
     type: "",
     id: guid(),
     options: {
       autoplay: true,
-      render: () => {}
+      showArrow: false
     },
-    children: () => {
-      return (<span><img
-            class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
-          ></img>
-          <img
-            class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
-          ></img>
-          <img
-            class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
-          ></img>
-          <img
-            class="carousel-img"
-            src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
-          ></img></span>)
-    }
   },
   {
     name: "折叠面板",
@@ -73,7 +55,7 @@ export default [
     type: "",
     id: guid(),
     options: {},
-    children: () => {
+    children: (h, { options }) => {
       return (
         <n-collapse-item title="青铜" name="1">
           <div>可以</div>
@@ -96,7 +78,31 @@ export default [
     type: "",
     id: guid(),
     isInline: true,
-    options: {}
+    options: {
+      trigger: 'hover',
+      options: [
+        {
+          label: "滨海湾金沙，新加坡",
+          key: "marina bay sands",
+          disabled: true
+        },
+        {
+          label: "布朗酒店，伦敦",
+          key: "brown's hotel, london"
+        },
+        {
+          label: "亚特兰蒂斯巴哈马，拿骚",
+          key: "atlantis nahamas, nassau"
+        },
+        {
+          label: "比佛利山庄酒店，洛杉矶",
+          key: "the beverly hills hotel, los angeles"
+        }
+      ]
+    },
+    children: () => {
+      return <n-button>这是一个下拉菜单</n-button>
+    }
   },
   {
     name: "文本省略",
@@ -105,34 +111,37 @@ export default [
     type: "",
     id: guid(),
     isInline: true,
-    options: {}
+    options: {
+      style: "max-width: 240px",
+      context: '住在我心里孤独的 孤独的海怪 痛苦之王 开始厌倦 深海的光 停滞的海浪'
+    }
   },
-  {
-    name: "渐变文字",
-    key: "gradientText",
-    icon: "",
-    type: "",
-    id: guid(),
-    isInline: true,
-    options: {}
-  },
-  {
-    name: "图标",
-    key: "icon",
-    icon: "",
-    type: "",
-    id: guid(),
-    isInline: true,
-    options: {}
-  },
-  {
-    name: "页头",
-    key: "pageHeader",
-    icon: "",
-    type: "",
-    id: guid(),
-    options: {}
-  },
+  // {
+  //   name: "渐变文字",
+  //   key: "gradientText",
+  //   icon: "",
+  //   type: "",
+  //   id: guid(),
+  //   isInline: true,
+  //   options: {}
+  // },
+  // {
+  //   name: "图标",
+  //   key: "icon",
+  //   icon: "",
+  //   type: "",
+  //   id: guid(),
+  //   isInline: true,
+  //   options: {}
+  // },
+  // {
+  //   name: "页头",
+  //   key: "pageHeader",
+  //   icon: "",
+  //   type: "",
+  //   id: guid(),
+  //   options: {}
+  // },
   {
     name: "标签",
     key: "tag",
@@ -140,22 +149,26 @@ export default [
     type: "",
     id: guid(),
     isInline: true,
-    options: {}
+    options: {
+      context: '爱在西元前',
+      type: 'success',
+      closable: false
+    }
   },
-  {
-    name: "排印",
-    key: "typography",
-    icon: "",
-    type: "",
-    id: guid(),
-    options: {}
-  },
-  {
-    name: "水印",
-    key: "watermark",
-    icon: "",
-    type: "",
-    id: guid(),
-    options: {}
-  }
+  // {
+  //   name: "排印",
+  //   key: "typography",
+  //   icon: "",
+  //   type: "",
+  //   id: guid(),
+  //   options: {}
+  // },
+  // {
+  //   name: "水印",
+  //   key: "watermark",
+  //   icon: "",
+  //   type: "",
+  //   id: guid(),
+  //   options: {}
+  // }
 ];

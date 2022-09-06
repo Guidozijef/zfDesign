@@ -1,5 +1,5 @@
 <template>
-  <n-scrollbar style="max-height: 720px">
+  <n-scrollbar style="max-height: 670px">
     <div style="padding:0 12px">
       <n-collapse arrow-placement="right" :default-expanded-names="[0]">
         <n-collapse-item v-for="item in collapseList" :key="item.key" :title="item.collapseName" :name="item.key">
@@ -16,7 +16,7 @@
   </n-scrollbar>
 </template>
 
-<script setup>
+<script setup name="widget-wapper">
 import draggable from 'vuedraggable'
 import collapseList from './lib'
 import WidgetItem from './widget-item'
