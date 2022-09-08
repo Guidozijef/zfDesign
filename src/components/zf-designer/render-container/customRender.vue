@@ -5,10 +5,15 @@ export default {
       type: Object,
       default: () => ({})
     },
+    extendOptions: {
+      type: Object,
+      default: () => ({})
+    },
     designer: {
       type: Object,
       default: () => ({})
     },
+    parent: null,
     render: {
       type: Function,
       default: () => ({})
@@ -17,7 +22,9 @@ export default {
   render (h) {
     return this.render(h, {
       options: this.options,
-      designer: this.designer
+      parent: this.parent,
+      designer: this.designer,
+      ...this.extendOptions
     })
   }
 }

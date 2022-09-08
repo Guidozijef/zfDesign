@@ -12,12 +12,12 @@ import utilsList from './utilsList.jsx'
 export default [
   {
     collapseName: '通用组件',
-    key: 0,
+    key: guid(),
     compList: currencyList,
   },
   {
     collapseName: '数据录入组件',
-    key: guid(),
+    key: 0,
     compList: dataEntryList,
   },
   {

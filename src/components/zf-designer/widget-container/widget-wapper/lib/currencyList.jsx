@@ -55,7 +55,7 @@ export default [
     type: "",
     id: guid(),
     options: {},
-    children: (h, { options }) => {
+    slot: (h, { options }) => {
       return (
         <n-collapse-item title="青铜" name="1">
           <div>可以</div>
@@ -100,7 +100,7 @@ export default [
         }
       ]
     },
-    children: () => {
+    slot: () => {
       return <n-button>这是一个下拉菜单</n-button>
     }
   },
