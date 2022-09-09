@@ -15,6 +15,7 @@ const themeOverrides = {
   common: {
     primaryColor: "#0052cc",
     primaryColorHover: '#2372d9',
+    borderRadius: '2px'
   },
   // Button: {
   //   textColor: "#FF0000"

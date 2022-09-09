@@ -77,12 +77,14 @@ export default [
   },
   {
     name: "表单",
-    key: "form",
+    key: "form-custom",
     icon: "",
     type: "",
     id: guid(),
+    isDraggable: true,
     options: {
-      ref: "formRef",
+      labelWidth: 100,
+      formRef: ref(null),
       inline: true,
       model: reactive({
         name: ""
@@ -100,23 +102,34 @@ export default [
       data: [
         {
           name: "表单项",
-          key: "form-item",
+          key: "form-item-custom",
           icon: "",
           type: "",
           id: guid(),
+          isDraggable: true,
           isInline: true,
           options: {
-            label: "姓名",
-            path: "name"
+            label: "表单项",
+            path: "name",
+            placeholder: '输入表单项'
           },
-          slot: (h, { optiions, parent }) => {
-            return (
-              <n-input
-                v-model:value={parent.options.model.name}
-                placeholder="输入姓名"
-              />
-            );
-          }
+          children: ref({
+            data: [
+              {
+                name: "表单项",
+                key: "input-custom",
+                icon: "",
+                type: "",
+                id: guid(),
+                isInline: true,
+                options: {
+                  label: "表单项",
+                  path: "name",
+                  placeholder: '输入表单项'
+                },
+              }
+            ]
+          })
         }
       ]
     })
