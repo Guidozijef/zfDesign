@@ -9,7 +9,7 @@
 
 
 <script setup name="NFormCustom">
-import { defineProps, useSlots } from "vue";
+import { defineProps, useSlots, toRefs, onMounted } from "vue";
 
 let props = defineProps({
     formRef: null,
@@ -42,6 +42,11 @@ let props = defineProps({
 
 let $slots = useSlots()
 
+let { currWidget, parentWidget } = toRefs(props)
+
+onMounted(() => {
+  console.log('form', currWidget.value, parentWidget.value)
+})
 
 </script>
 

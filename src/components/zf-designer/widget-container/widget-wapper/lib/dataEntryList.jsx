@@ -116,7 +116,7 @@ export default [
           children: ref({
             data: [
               {
-                name: "表单项",
+                name: "文本输入",
                 key: "input-custom",
                 icon: "",
                 type: "",
@@ -125,7 +125,7 @@ export default [
                 options: {
                   label: "表单项",
                   path: "name",
-                  placeholder: '输入表单项'
+                  placeholder: '请输入'
                 },
               }
             ]

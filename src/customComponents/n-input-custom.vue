@@ -5,7 +5,7 @@
 </template>
 
 <script setup name="NInputCustom">
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, toRefs, onMounted } from 'vue'
 
 let props = defineProps({
     label: {
@@ -28,5 +28,11 @@ let props = defineProps({
 });
 
 let value = ref('')
+
+let { currWidget, parentWidget } = toRefs(props)
+
+onMounted(() => {
+  console.log('input', currWidget.value, parentWidget.value)
+})
 
 </script>

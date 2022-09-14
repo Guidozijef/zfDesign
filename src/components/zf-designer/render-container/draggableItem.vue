@@ -4,7 +4,7 @@
     item-key="id"
     v-bind="{group:'dragGroup', ghostClass: 'sortable-ghost', chosenClass: 'sortable-chosen', dragClass: 'sortable-drag', animation: 200}"
     tag="ul"
-    :style="{minHeight:parentWidget === null ? '724px' : '', width: '100%'}"
+    :style="{minHeight:parentWidget === null ? '724px' : '', width: '100%', height: '100%'}"
     :component-data="{name:'fade', type: 'transition-group'}"
     @end="(evt) => onGridDragEnd(evt)"
     @add="(evt) => onGridDragAdd(evt)"
@@ -118,7 +118,7 @@ let onGridDragEnd = evt => {
 
 let handlerCopy = widget => {
   let widgetCopy = cloneDeep(widget);
-  console.log(widgetCopy);
+  // console.log(widgetCopy);
   widgetCopy.id = guid();
   if (widgetCopy.children) {
     let subList = cloneDeep(widgetCopy.children.data);
@@ -132,23 +132,29 @@ let handlerCopy = widget => {
 };
 
 let handlerDel = widget => {
-  console.log("del", widget);
+  // console.log("del", widget);
   props.widgetList.data = props.widgetList.data.filter(f => f.id !== widget.id);
   emit("selectCurrComponent", {});
 };
 
 let onGridDragAdd = evt => {
   console.log("add", evt, props.parentWidget);
-  if (evt.pullMode !== "clone") return;
+  // TODO: 这里需要判断是从组件库拖拽加进来的才进行添加，因为模版内拖拽只是移动位置了，不需要再次进行添加了
   let { element } = evt.item.__draggable_context;
-  // 如果已经拖拽了相同的组件，那么后面拖拽进来的就需要新的id,
-  // TODO:这里需要进行拷贝处理，因为这个element是绑定在组件的dom元素上面的，修改一个都是关联的
-  let ele = cloneDeep(element);
-  let flag = props.widgetList.data.find(f => f.id === ele.id);
-  if (flag) {
-    ele.id = guid();
+  if (evt.pullMode === "clone") {
+    // 如果已经拖拽了相同的组件，那么后面拖拽进来的就需要新的id,
+    // TODO:这里需要进行拷贝处理，因为这个element是绑定在组件的dom元素上面的，修改一个都是关联的
+    let ele = cloneDeep(element);
+    let flag = props.widgetList.data.find(f => f.id === ele.id);
+    if (flag) {
+      ele.id = guid();
+    }
+    // TODO: 这个递归绑定每个元素的父级数据，方便到时候获取父级的父级的数据
+    mutuallyrecursive(ele, null)
+    props.widgetList.data.push(ele);
+  } else {
+    element.parent = props.parentWidget
   }
-  props.widgetList.data.push(ele);
 };
 
 let onGridDragUpdate = evt => {
@@ -158,6 +164,15 @@ let onGridDragUpdate = evt => {
 let checkContainerMove = evt => {
   // currSelectComp.value = {}
 };
+
+let mutuallyrecursive = (ele, parent) => {
+  ele.parent = parent
+  if (ele.children) {
+    ele.children.data.forEach(subEle => {
+      mutuallyrecursive(subEle, ele)
+    })
+  }
+}
 </script>
 
 <style lang="scss" scoped>

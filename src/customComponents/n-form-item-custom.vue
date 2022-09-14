@@ -8,7 +8,7 @@
 </template>
 
 <script setup name="NFormItemCustom">
-import { defineProps, useSlots } from 'vue'
+import { defineProps, useSlots, toRefs, onMounted } from 'vue'
 
 let props = defineProps({
     label: {
@@ -27,5 +27,11 @@ let props = defineProps({
 });
 
 let $slots = useSlots()
+
+let { currWidget, parentWidget } = toRefs(props)
+
+onMounted(() => {
+  console.log('form-item', currWidget.value, parentWidget.value)
+})
 
 </script>
