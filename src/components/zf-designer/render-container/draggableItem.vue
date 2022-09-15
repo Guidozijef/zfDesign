@@ -14,10 +14,7 @@
     <template #item="{ element: widget, index: swIdx }">
       <div
         class="widget-view_item"
-        @mouseenter="handlerHoverCurrComponent(widget)"
-        @mouseleave="handlerHoverCurrComponent({})"
-        :class="[(currSelectComp.id === widget.id) && 'curr-selectComp', (currHoverComp.id === widget.id) && 'curr-hoverComp']"
-        @click.stop="handlerSelectCurrComponent(widget)"
+        :data-id="widget.id"
         :style="{ display: widget.isInline ? 'inline-block' : 'block', minWidth: widget.minWidth }"
       >
         <component
@@ -30,10 +27,7 @@
         >
           <draggable-item
             v-if="widget.isDraggable"
-            @hoverCurrComponent="handlerHoverCurrComponent"
-            @selectCurrComponent="handlerSelectCurrComponent"
             :currSelectComp="currSelectComp"
-            :currHoverComp="currHoverComp"
             :parent-widget="widget"
             :widgetList="widget.children"
           ></draggable-item>
@@ -70,7 +64,7 @@
 </template>
 
 <script setup name="draggableItem">
-import { defineProps, ref, reactive, defineEmits } from "vue";
+import { defineProps, ref, reactive, defineEmits, getCurrentInstance, onMounted } from "vue";
 import draggable from "vuedraggable";
 import CustomRender from "./customRender";
 import ControlView from "./controlView";
@@ -86,36 +80,23 @@ let props = defineProps({
     type: Object,
     default: () => ({})
   },
-  currHoverComp: {
-    type: Object,
-    default: () => ({})
-  },
   parentWidget: Object
 });
+
 const emit = defineEmits(["selectCurrComponent", "hoverCurrComponent"]);
 
-// TODO:这是一个递归方法，往外暴露修改当前选择组件的事件
-const handlerSelectCurrComponent = widget => {
-  emit("selectCurrComponent", widget);
+onMounted(() => {
+  let currentCpn = getCurrentInstance();
+  let parent = currentCpn.parent;
+  console.log(currentCpn, parent)
+})
 
-  // let currNode = null
-  // if (e.currentTarget && e.currentTarget.__draggable_context) {
-  //   currNode = e.currentTarget
-  // } else {
-  //   currNode = [ ...e.path].find(node => node.className.includes('widget-view_item'))
-  // }
-  // let rectObj = currNode.getBoundingClientRect()
-  // console.log(rectObj)
-};
-
-let handlerHoverCurrComponent = widget => {
-  emit("hoverCurrComponent", widget);
-};
 
 let onGridDragEnd = evt => {
   console.log("end", evt, props.widgetList.data);
 };
 
+// 复制组件
 let handlerCopy = widget => {
   let widgetCopy = cloneDeep(widget);
   // console.log(widgetCopy);
@@ -180,15 +161,15 @@ let mutuallyrecursive = (ele, parent) => {
   position: relative;
   vertical-align: top;
   box-sizing: border-box;
-  border: 2px solid #fff;
+  // border: 2px solid #fff;
   // &:hover {
   //   border: 2px dashed #197aff;
   // }
   &.curr-hoverComp {
-    border: 2px dashed #197aff;
+    // border: 2px dashed #197aff;
   }
   &.curr-selectComp {
-    border: 2px solid #197aff;
+    // border: 2px solid #197aff;
   }
   .control-view {
     position: absolute;

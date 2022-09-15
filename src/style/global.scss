@@ -8,3 +8,22 @@ body, html, #app{
   height: 100%;
   width: 100%;
 }
+
+.borders-tools {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+
+// 鼠标移动到对应组件的样式
+.item-borders-detecting {
+  border: 1px dashed #197aff;
+  background: rgba(0, 121, 242, 0.04);
+}
+
+// 鼠标选中对应组件的样式
+.item-borders-selecting{
+  border: 2px solid #197aff;
+}
