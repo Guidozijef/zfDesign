@@ -111,6 +111,7 @@ export function createdNode({ width, height, left, top }, className = '', dom = 
   return dom
 }
 
+let currSelectComp = {}
 /**
  * 根据id递归查找当前组件数据
  * @param {*} list 
@@ -120,10 +121,12 @@ export function findCurrWidgetById (list, id) {
   for (let i = 0; i < list.length; i++) {
     const widget = list[i];
     if (widget.id === id) {
-      return widget
+      currSelectComp = widget
+      break
     }
     if (widget.children) {
-      return findCurrWidgetById(widget.children.data, id)
+      findCurrWidgetById(widget.children.data, id)
     }
   }
+  return currSelectComp
 }

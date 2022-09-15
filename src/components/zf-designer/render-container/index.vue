@@ -5,6 +5,7 @@
         <draggable-item
           :widgetList="widgetList"
           :currSelectComp="currSelectComp"
+          @selectCurrComponent="value => currSelectComp = value"
           :parent-widget="null"
         ></draggable-item>
       </n-scrollbar>
@@ -47,6 +48,13 @@ let currSelectComp = ref({});
 watch(() => currSelectCompId.value, (id) => {
   currSelectComp.value = findCurrWidgetById(widgetList.data, id)
   // console.log(currSelectComp.value)
+})
+
+watch(() => currSelectComp.value.id, (id) => {
+  if (!id) {
+    let borderDom = borderContainer.value.querySelector('.item-borders-selecting');
+    borderDom && borderContainer.value.removeChild(borderDom);
+  }
 })
 
 </script>

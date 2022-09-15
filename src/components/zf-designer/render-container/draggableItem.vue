@@ -28,6 +28,7 @@
           <draggable-item
             v-if="widget.isDraggable"
             :currSelectComp="currSelectComp"
+            @selectCurrComponent="handlerCurrSelectComp"
             :parent-widget="widget"
             :widgetList="widget.children"
           ></draggable-item>
@@ -113,10 +114,13 @@ let handlerCopy = widget => {
 };
 
 let handlerDel = widget => {
-  // console.log("del", widget);
   props.widgetList.data = props.widgetList.data.filter(f => f.id !== widget.id);
   emit("selectCurrComponent", {});
 };
+
+let handlerCurrSelectComp = (value) => {
+  emit("selectCurrComponent", value);
+}
 
 let onGridDragAdd = evt => {
   console.log("add", evt, props.parentWidget);
