@@ -44,7 +44,7 @@ let widgetList = reactive({ data: [] });
 
 let currSelectComp = ref({});
 
-// 监听当前点击的组件的id，查询当前组件数据
+// TODO:监听当前点击的组件的id，根据当前节点的id查询当前组件数据
 watch(() => currSelectCompId.value, (id) => {
   currSelectComp.value = findCurrWidgetById(widgetList.data, id)
   // console.log(currSelectComp.value)
