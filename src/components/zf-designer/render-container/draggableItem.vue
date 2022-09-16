@@ -86,11 +86,11 @@ let props = defineProps({
 
 const emit = defineEmits(["selectCurrComponent", "hoverCurrComponent"]);
 
-onMounted(() => {
-  let currentCpn = getCurrentInstance();
-  let parent = currentCpn.parent;
-  console.log(currentCpn, parent)
-})
+// onMounted(() => {
+//   let currentCpn = getCurrentInstance();
+//   let parent = currentCpn.parent;
+//   console.log(currentCpn, parent)
+// })
 
 
 let onGridDragEnd = evt => {

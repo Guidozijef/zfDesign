@@ -1,11 +1,11 @@
 <template>
   <!-- <n-form-item :label="label" :path="path"> parentWidget.options.model[path] -->
-    <n-input v-model:value="value" :placeholder="placeholder" />
+    <n-input v-model:value="formModel[path]" :placeholder="placeholder" />
   <!-- </n-form-item> -->
 </template>
 
 <script setup name="NInputCustom">
-import { defineProps, ref, toRefs, onMounted } from 'vue'
+import { defineProps, ref, toRefs, onMounted, computed } from 'vue'
 
 let props = defineProps({
     label: {
@@ -27,12 +27,15 @@ let props = defineProps({
     parentWidget: null
 });
 
-let value = ref('')
-
 let { currWidget, parentWidget } = toRefs(props)
 
-onMounted(() => {
-  console.log('input', currWidget.value, parentWidget.value)
-})
+// onMounted(() => {
+//   console.log('input', currWidget.value, parentWidget.value)
+// })
+
+let formModel = computed(() => parentWidget.value.parent.options.model)
+
+let path = computed(() => parentWidget.value.options.path)
+
 
 </script>

@@ -10,7 +10,7 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {
+    props: {
       value: ref(''),
       inputProps: {
         autocomplete: 'disabled'
@@ -19,7 +19,8 @@ export default [
       options: computed(() => {
         return [];
       })
-    }
+    },
+    options: {}
   },
   {
     name: "级联选择",
@@ -28,7 +29,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "颜色选择器",
@@ -37,7 +39,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "复选框",
@@ -46,7 +49,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "日期选择器",
@@ -55,7 +59,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "动态录入",
@@ -64,7 +69,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "动态标签",
@@ -73,7 +79,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "表单",
@@ -98,6 +105,9 @@ export default [
       },
       size: "small"
     },
+    props: {
+      
+    },
     children: reactive({
       data: [
         {
@@ -113,6 +123,7 @@ export default [
             path: "name",
             placeholder: '输入表单项'
           },
+          props: {},
           children: ref({
             data: [
               {
@@ -127,6 +138,7 @@ export default [
                   path: "name",
                   placeholder: '请输入'
                 },
+                props: {},
               }
             ]
           })
@@ -141,7 +153,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "数字输入",
@@ -150,7 +163,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "提及",
@@ -159,7 +173,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "单选",
@@ -168,7 +183,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "评分",
@@ -177,7 +193,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "选择器",
@@ -186,7 +203,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "滑动选择",
@@ -195,7 +213,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "开关",
@@ -204,7 +223,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "时间选择器",
@@ -213,7 +233,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "复选框",
@@ -222,7 +243,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "树形选择",
@@ -231,7 +253,8 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   },
   {
     name: "上传",
@@ -240,6 +263,7 @@ export default [
     type: "",
     isInline: true,
     id: guid(),
-    options: {}
+    options: {},
+    props: {}
   }
 ];

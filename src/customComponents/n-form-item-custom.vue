@@ -31,7 +31,7 @@ let $slots = useSlots()
 let { currWidget, parentWidget } = toRefs(props)
 
 onMounted(() => {
-  console.log('form-item', currWidget.value, parentWidget.value)
+  // console.log('form-item', currWidget.value, parentWidget.value)
 })
 
 </script>
