@@ -22,6 +22,7 @@ export function setupEvents(doc, container) {
 export function setupSelecting (doc, container) {
   let selecting = (e) => {
     let currNode = generatorBorderNode(e, 'item-borders-selecting', container)
+    if (!currNode) return
     // TODO:根据当前组件节点上绑定的id来查询组件数据
     currSelectCompId.value = currNode.dataset.id
   }

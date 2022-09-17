@@ -9,14 +9,49 @@
     :disabled="disabled"
   >
     <template v-for="item in formItems" :key="item.key">
-      <n-form-item :label="item.name" :path="item.key"><custom-render :item="item" :render="generateItem"></custom-render> }}</n-form-item>
+      <n-form-item :label="item.name" :path="item.key">
+        <n-input
+          v-if="item.type === 'input'"
+          v-model:value="formData[item.key]"
+          :placeholder="getPlaceholder(item)"
+          :disabled="item.disabled"
+          clearable
+        />
+        <n-input
+          v-if="item.type === 'textarea'"
+          v-model:value="formData[item.key]"
+          :placeholder="getPlaceholder(item)"
+          type="textarea"
+          :disabled="item.disabled"
+          :autosize="item.autosize || {
+            minRows: 3,
+            maxRows: 5,
+          }"
+          clearable
+        />
+        <n-select
+          v-if="item.type === 'select'"
+          v-model:value="formData[item.key]"
+          :disabled="item.disabled"
+          :options="item.options"
+          :placeholder="getPlaceholder(item)"
+          :multiple="item.multiple"
+          :max-tag-count="item.maxTagCount || 'responsive'"
+          clearable
+        />
+        <n-switch
+          v-if="item.type === 'switch'"
+          v-model:value="formData[item.key]"
+          @update:value="item.handleChange"
+          :disabled="item.disabled"
+        />
+      </n-form-item>
     </template>
   </n-form>
 </template>
 
 <script setup name="generateForm">
-import { defineProps, toRefs } from 'vue';
-import CustomRender from './customRender'
+import { defineProps, toRefs, defineEmits, watch, nextTick } from 'vue';
 
 let props = defineProps({
   formItems: {
@@ -49,17 +84,14 @@ let props = defineProps({
   },
 });
 
-let { formData } = toRefs(props)
+let emit = defineEmits(['update:formData'])
 
-let generateItem = (h, { item }) => {
-  // return generateItemInput(item)
-  return <n-input v-model={formData[item.key]} placeholder={item.placeholder} clearable ></n-input>;
+watch(() => props.formData, (formData) => {
+    emit('update:formData', formData)
+}, { deep: true, immediate: true })
+
+
+let getPlaceholder = (item) => {
+  return item.placeholder || '请输入'
 }
-
-let generateItemInput = item => {
-  
-};
-
-
-
 </script>
