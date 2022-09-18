@@ -91,10 +91,16 @@ export default [
     isDraggable: true,
     options: [
       {
+        name: 'ref',
+        key: 'formRef',
+        type: 'input',
+        defaultValue: 'formRef'
+      },
+      {
         name: '标签宽度',
         key: 'labelWidth',
-        type: 'input',
-        defaultVlaue: 70,
+        type: 'number-input',
+        defaultValue: 70,
       },
       {
         name: '对齐方式',
@@ -109,7 +115,8 @@ export default [
             value: 'top',
             label: 'top'
           },
-        ]
+        ],
+        defaultValue: 'left'
       },
       {
         name: '大小',
@@ -128,7 +135,8 @@ export default [
             value: 'small',
             label: '小'
           },
-        ]
+        ],
+        defaultValue: 'small'
       },
     ],
     props: {
@@ -145,7 +153,8 @@ export default [
           trigger: "blur"
         }
       },
-      size: "small"
+      size: "small",
+      labelPlacement: 'left'
     },
     children: reactive({
       data: [

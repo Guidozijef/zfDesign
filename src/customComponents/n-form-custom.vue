@@ -1,5 +1,5 @@
 <template>
-  <n-form :ref="formRef" :inline="inline" :label-width="labelWidth" :model="model" :rules="rules" :size="size">
+  <n-form :ref="formRef" :inline="inline" :label-width="labelWidth" :label-placement="labelPlacement" :model="model" :rules="rules" :size="size">
     <!-- <template v-for="slot in Object.keys($slots)" v-slot:[slot]="scope">
       <slot :name="slot" v-bind="scope"/>
     </template> -->
@@ -20,8 +20,12 @@ let props = defineProps({
       default: false,
     },
     labelWidth: {
-      type: Number,
+      type: [Number, String],
       default: 100,
+    },
+    labelPlacement: {
+      type: String,
+      default: 'left',
     },
     model: {
       type: Object,

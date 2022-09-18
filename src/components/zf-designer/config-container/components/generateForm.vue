@@ -29,6 +29,11 @@
           }"
           clearable
         />
+        <n-input-number 
+        v-if="item.type === 'number-input'"
+        :placeholder="getPlaceholder(item)" 
+        v-model:value="formData[item.key]" 
+        clearable />
         <n-select
           v-if="item.type === 'select'"
           v-model:value="formData[item.key]"

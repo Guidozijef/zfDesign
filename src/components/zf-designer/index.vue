@@ -2,12 +2,12 @@
   <div class="designer-selection">
     <widget-container @toggle="toggle" :compPanelWidth="compPanelWidth"></widget-container>
     <config-container :compPanelWidth="compPanelWidth" :currSelectComp="currSelectComp"></config-container>
-    <render-container :isExtend="isExtend" :compPanelWidth="compPanelWidth" @currSelectComp="value => currSelectComp = value"></render-container>
+    <render-container :isExtend="isExtend" :compPanelWidth="compPanelWidth" @currSelectComp="comp => Object.assign(currSelectComp, comp)"></render-container>
   </div>
 </template>
 
 <script setup name="zf-designer">
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import WidgetContainer from './widget-container'
 import RenderContainer from './render-container'
 import ConfigContainer from './config-container'
@@ -19,7 +19,7 @@ let toggle = (value) => {
 
 let compPanelWidth = 250
 
-let currSelectComp = ref({})
+let currSelectComp = reactive({})
 
 </script>
 
