@@ -171,7 +171,20 @@ export default [
             path: "name",
             placeholder: '输入表单项'
           },
-          options: [{}],
+          options: [
+            {
+              name: 'label',
+              key: 'label',
+              type: 'input',
+              defaultValue: '表单项'
+            },
+            {
+              name: '字段路径',
+              key: 'path',
+              type: 'input',
+              defaultValue: ''
+            },
+          ],
           children: reactive({
             data: [
               {
@@ -186,7 +199,33 @@ export default [
                   path: "name",
                   placeholder: '请输入'
                 },
-                options: [{}],
+                options: [
+                  {
+                    name: '字段',
+                    key: 'path',
+                    type: 'input',
+                  },
+                  {
+                    name: '大小',
+                    key: 'size',
+                    type: 'select',
+                    options: [
+                      {
+                        value: 'large',
+                        label: '大'
+                      },
+                      {
+                        value: 'medium',
+                        label: '中'
+                      },
+                      {
+                        value: 'small',
+                        label: '小'
+                      },
+                    ],
+                    defaultValue: 'small'
+                  },
+                ],
               }
             ]
           })
