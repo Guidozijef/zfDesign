@@ -14,20 +14,23 @@ export function setupEvents(doc, container) {
 
 }
 
+export function clearEvents (doc) {
+
+  doc.removeListener("mouseover", hovering);
+
+  doc.removeListener("mouseleave", leaving);
+
+  doc.removeListener("click", selecting);
+}
+
 /**
  * 注册鼠标选中高亮组件事件
  * @param {*} doc 事件源
  * @param {*} container 父级容器
  */
 export function setupSelecting (doc, container) {
-  let selecting = (e) => {
-    let currNode = generatorBorderNode(e, 'item-borders-selecting', container)
-    if (!currNode) return
-    // TODO:根据当前组件节点上绑定的id来查询组件数据
-    currSelectCompId.value = currNode.dataset.id
-  }
 
-  doc.addEventListener("click", selecting, true)
+  doc.addEventListener("click", e => selecting(e, container), true)
 }
 
 /**
@@ -36,20 +39,27 @@ export function setupSelecting (doc, container) {
  * @param {*} container 父级容器
  */
 export function setupDetecting (doc, container) {
-  let hovering = (e) => {
-    generatorBorderNode(e, 'item-borders-detecting', container)
-  }
 
-  let leaving = () => {
-    let borderDom = container.querySelector('.item-borders-detecting');
-    borderDom && container.removeChild(borderDom);
-  };
+  doc.addEventListener("mouseover", e => hovering(e, container), true);
 
-  doc.addEventListener("mouseover", hovering, true);
-
-  doc.addEventListener("mouseleave", leaving, false);
+  doc.addEventListener("mouseleave", e => leaving(e, container), false);
 }
 
+let hovering = (e, container) => {
+  generatorBorderNode(e, 'item-borders-detecting', container)
+}
+
+let leaving = (e, container) => {
+  let borderDom = container.querySelector('.item-borders-detecting');
+  borderDom && container.removeChild(borderDom);
+};
+
+let selecting = (e, container) => {
+  let currNode = generatorBorderNode(e, 'item-borders-selecting', container)
+  if (!currNode) return
+  // TODO:根据当前组件节点上绑定的id来查询组件数据
+  currSelectCompId.value = currNode.dataset.id
+}
 
 /**
  * 生成高亮当前组件的样式dom

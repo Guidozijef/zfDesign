@@ -1,8 +1,5 @@
 <template>
   <n-form-item :label="label" :path="path">
-    <!-- <template v-for="slot in Object.keys($slots)" v-slot:[slot]="scope">
-      <slot :name="slot" v-bind="scope"/>
-    </template> -->
     <slot></slot>
   </n-form-item>
 </template>

@@ -19,7 +19,7 @@
       >
         <component
           :is="`n-${widget.key}`"
-          v-bind="widget.options"
+          v-bind="widget.props"
           :currWidget="widget"
           :key="widget.id"
           :parent-widget="parentWidget"
@@ -39,7 +39,7 @@
           >
             <component
               :is="`n-${subWidget.key}`"
-              v-bind="subWidget.options"
+              v-bind="subWidget.props"
               :currWidget="subWidget"
               :parent-widget="widget"
               :index-of-parent-list="subIdx"
@@ -47,11 +47,11 @@
           </template>
           <custom-render
             v-else-if="widget.slot"
-            :options="widget.options"
+            :props="widget.props"
             :parent="parentWidget"
             :render="widget.slot"
           ></custom-render>
-          <span v-else-if="widget.options.context">{{ widget.options.context }}</span>
+          <span v-else-if="widget.props.context">{{ widget.props.context }}</span>
         </component>
         <div class="control-view" v-show="currSelectComp.id === widget.id">
           <control-view

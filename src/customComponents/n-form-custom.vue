@@ -3,19 +3,21 @@
     <!-- <template v-for="slot in Object.keys($slots)" v-slot:[slot]="scope">
       <slot :name="slot" v-bind="scope"/>
     </template> -->
-    <slot></slot>
+    <!-- <n-grid :cols="24" :x-gap="24"> -->
+      <slot></slot>
+    <!-- </n-grid> -->
   </n-form>
 </template>
 
 
 <script setup name="NFormCustom">
-import { defineProps, useSlots, toRefs, onMounted } from "vue";
+import { defineProps, ref, useSlots, toRefs, onMounted } from "vue";
 
 let props = defineProps({
     formRef: null,
     inline: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     labelWidth: {
       type: Number,

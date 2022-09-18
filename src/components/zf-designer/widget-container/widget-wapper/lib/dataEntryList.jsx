@@ -89,9 +89,14 @@ export default [
     type: "",
     id: guid(),
     isDraggable: true,
-    options: {
+    options: [
+      {
+        
+      }
+    ],
+    props: {
       labelWidth: 100,
-      formRef: ref(null),
+      formRef: ref('formRef'),
       inline: true,
       model: reactive({
         name: ""
@@ -105,9 +110,6 @@ export default [
       },
       size: "small"
     },
-    props: {
-      
-    },
     children: reactive({
       data: [
         {
@@ -118,13 +120,13 @@ export default [
           id: guid(),
           isDraggable: true,
           isInline: true,
-          options: {
+          props: {
             label: "表单项",
             path: "name",
             placeholder: '输入表单项'
           },
-          props: {},
-          children: ref({
+          options: [{}],
+          children: reactive({
             data: [
               {
                 name: "文本输入",
@@ -133,18 +135,32 @@ export default [
                 type: "",
                 id: guid(),
                 isInline: true,
-                options: {
+                props: {
                   label: "表单项",
                   path: "name",
                   placeholder: '请输入'
                 },
-                props: {},
+                options: [{}],
               }
             ]
           })
-        }
+        },
       ]
     })
+  },
+  {
+    name: "表单项",
+    key: "form-item-custom",
+    icon: "",
+    type: "",
+    isInline: true,
+    id: guid(),
+    options: [{}],
+    isDraggable: true,
+    props: {
+      label: "表单项",
+      path: "name",
+    }
   },
   {
     name: "文本输入",

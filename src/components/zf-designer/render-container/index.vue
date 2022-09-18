@@ -16,9 +16,9 @@
 </template>
 
 <script setup name="render-container">
-import { reactive, ref, watch, onMounted } from 'vue';
+import { reactive, ref, watch, onMounted, onBeforeUnmount } from 'vue';
 import DraggableItem from './draggableItem';
-import { setupEvents, currSelectCompId, findCurrWidgetById } from './utils';
+import { setupEvents, clearEvents, currSelectCompId, findCurrWidgetById } from './utils';
 
 defineProps({
   isExtend: {
@@ -39,6 +39,10 @@ onMounted(() => {
   setupEvents(canvas.value, borderContainer.value, widgetList.data)
 });
 
+onBeforeUnmount(() => {
+  // 注销鼠标移入、移出、点击等事件
+  clearEvents(canvas.value)
+});
 
 let widgetList = reactive({ data: [] });
 

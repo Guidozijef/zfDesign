@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    options: {
+    props: {
       type: Object,
       default: () => ({})
     },
@@ -21,7 +21,7 @@ export default {
   },
   render (h) {
     return this.render(h, {
-      options: this.options,
+      props: this.props,
       parent: this.parent,
       designer: this.designer,
       ...this.extendOptions

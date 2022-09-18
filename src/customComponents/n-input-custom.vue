@@ -33,9 +33,9 @@ let { currWidget, parentWidget } = toRefs(props)
 //   console.log('input', currWidget.value, parentWidget.value)
 // })
 
-let formModel = computed(() => parentWidget.value.parent.options.model)
+let formModel = computed(() => parentWidget.value.parent.props.model)
 
-let path = computed(() => parentWidget.value.options.path)
+let path = computed(() => parentWidget.value.props.path)
 
 
 </script>
