@@ -1,8 +1,8 @@
 <template>
   <div class="designer-selection">
     <widget-container @toggle="toggle" :compPanelWidth="compPanelWidth"></widget-container>
-    <config-container :compPanelWidth="compPanelWidth"></config-container>
-    <render-container :isExtend="isExtend" :compPanelWidth="compPanelWidth"></render-container>
+    <config-container :compPanelWidth="compPanelWidth" :currSelectComp="currSelectComp"></config-container>
+    <render-container :isExtend="isExtend" :compPanelWidth="compPanelWidth" @currSelectComp="value => currSelectComp = value"></render-container>
   </div>
 </template>
 
@@ -18,6 +18,8 @@ let toggle = (value) => {
 }
 
 let compPanelWidth = 250
+
+let currSelectComp = ref({})
 
 </script>
 

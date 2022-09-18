@@ -91,8 +91,45 @@ export default [
     isDraggable: true,
     options: [
       {
-        
-      }
+        name: '标签宽度',
+        key: 'labelWidth',
+        type: 'input',
+        defaultVlaue: 70,
+      },
+      {
+        name: '对齐方式',
+        key: 'labelPlacement',
+        type: 'select',
+        options: [
+          {
+            value: 'left',
+            label: 'left'
+          },
+          {
+            value: 'top',
+            label: 'top'
+          },
+        ]
+      },
+      {
+        name: '大小',
+        key: 'size',
+        type: 'select',
+        options: [
+          {
+            value: 'large',
+            label: '大'
+          },
+          {
+            value: 'medium',
+            label: '中'
+          },
+          {
+            value: 'small',
+            label: '小'
+          },
+        ]
+      },
     ],
     props: {
       labelWidth: 100,

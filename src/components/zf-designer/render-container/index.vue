@@ -16,7 +16,7 @@
 </template>
 
 <script setup name="render-container">
-import { reactive, ref, watch, onMounted, onBeforeUnmount } from 'vue';
+import { reactive, ref, watch, onMounted, onBeforeUnmount, defineEmits } from 'vue';
 import DraggableItem from './draggableItem';
 import { setupEvents, clearEvents, currSelectCompId, findCurrWidgetById } from './utils';
 
@@ -30,6 +30,8 @@ defineProps({
     default: 250,
   },
 });
+
+const emit = defineEmits(['currSelectComp'])
 
 let canvas = ref('');
 let borderContainer = ref('');
@@ -52,6 +54,7 @@ let currSelectComp = ref({});
 watch(() => currSelectCompId.value, (id) => {
   currSelectComp.value = findCurrWidgetById(widgetList.data, id)
   // console.log(currSelectComp.value)
+  emit('currSelectComp', currSelectComp.value)
 })
 
 watch(() => currSelectComp.value.id, (id) => {

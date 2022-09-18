@@ -3,7 +3,7 @@
     <div class="props-selection">
       <n-tabs type="line" animated justify-content="space-evenly">
         <n-tab-pane name="oasis" tab="属性">
-          <props-config></props-config>
+          <props-config :currSelectComp="currSelectComp" :formData="formData"></props-config>
         </n-tab-pane>
         <n-tab-pane name="the beatles" tab="模版">模版</n-tab-pane>
       </n-tabs>
@@ -11,9 +11,19 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
+<script setup name="ConfigContainer">
+import { ref, defineProps, reactive } from 'vue';
 import PropsConfig from './props-config'
+
+let props = defineProps({
+  currSelectComp: {
+    type: Object,
+    default: () => ({})
+  }
+})
+
+let formData = reactive({})
+
 
 
 

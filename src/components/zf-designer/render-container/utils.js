@@ -45,16 +45,16 @@ export function setupDetecting (doc, container) {
   doc.addEventListener("mouseleave", e => leaving(e, container), false);
 }
 
-let hovering = (e, container) => {
+function hovering(e, container){
   generatorBorderNode(e, 'item-borders-detecting', container)
 }
 
-let leaving = (e, container) => {
+function leaving(e, container){
   let borderDom = container.querySelector('.item-borders-detecting');
   borderDom && container.removeChild(borderDom);
 };
 
-let selecting = (e, container) => {
+function selecting(e, container){
   let currNode = generatorBorderNode(e, 'item-borders-selecting', container)
   if (!currNode) return
   // TODO:根据当前组件节点上绑定的id来查询组件数据
