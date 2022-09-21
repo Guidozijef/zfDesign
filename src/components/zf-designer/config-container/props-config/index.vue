@@ -13,25 +13,26 @@ let props = defineProps({
   currSelectComp: {
     type: Object,
     default: () => ({})
-  },
-  formData: {
-    type: Object,
-    default: () => ({})
   }
 })
 
+let formData = reactive({})
+
 let formItems = computed(() => props.currSelectComp?.options)
 
-watch(formItems, (formItems) => {
-  (formItems || []).forEach(item => {
-    if (item.defaultValue) {
-      props.formData[item.key] = item.defaultValue
+
+// TODO: 这里获取当前组件参数的初始值，再次点击不会在恢复了，因为这个组件当前引用值已经被修改了
+watchEffect(() => {
+  (formItems.value || []).forEach(item => {
+    if (props.currSelectComp.props[item.key]) {
+      formData[item.key] = props.currSelectComp.props[item.key]
     }
   })
 })
 
-watch(props.formData, (formData) => {
-  Object.assign(props.currSelectComp.props, formData)
+watch(formData, (formData) => {
+  props.currSelectComp.props = Object.assign(props.currSelectComp.props, formData)
+  console.log(formData, props.currSelectComp.props)
 }, { deep: true })
 
 // let formItems = reactive([

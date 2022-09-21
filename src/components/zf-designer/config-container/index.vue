@@ -3,7 +3,7 @@
     <div class="props-selection">
       <n-tabs type="line" animated justify-content="space-evenly">
         <n-tab-pane name="oasis" tab="属性">
-          <props-config :currSelectComp="currSelectComp" :formData="formData"></props-config>
+          <props-config :currSelectComp="currSelectComp" ></props-config>
         </n-tab-pane>
         <n-tab-pane name="the beatles" tab="模版">模版</n-tab-pane>
       </n-tabs>
@@ -22,7 +22,6 @@ let props = defineProps({
   }
 })
 
-let formData = reactive({})
 
 
 

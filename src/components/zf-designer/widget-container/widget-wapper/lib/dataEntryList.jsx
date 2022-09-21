@@ -94,13 +94,11 @@ export default [
         name: 'ref',
         key: 'formRef',
         type: 'input',
-        defaultValue: 'formRef'
       },
       {
         name: '标签宽度',
         key: 'labelWidth',
         type: 'number-input',
-        defaultValue: 70,
       },
       {
         name: '对齐方式',
@@ -116,7 +114,6 @@ export default [
             label: 'top'
           },
         ],
-        defaultValue: 'left'
       },
       {
         name: '大小',
@@ -136,11 +133,10 @@ export default [
             label: '小'
           },
         ],
-        defaultValue: 'small'
       },
     ],
     props: {
-      labelWidth: 100,
+      labelWidth: 70,
       formRef: ref('formRef'),
       inline: true,
       model: reactive({

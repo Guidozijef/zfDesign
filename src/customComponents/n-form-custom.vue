@@ -21,7 +21,7 @@ let props = defineProps({
     },
     labelWidth: {
       type: [Number, String],
-      default: 100,
+      default: 70,
     },
     labelPlacement: {
       type: String,
