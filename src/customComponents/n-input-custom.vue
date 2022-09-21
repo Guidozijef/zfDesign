@@ -8,17 +8,9 @@
 import { defineProps, ref, toRefs, onMounted, computed } from 'vue'
 
 let props = defineProps({
-    label: {
-      type: String,
-      default: '表单项'
-    },
-    path: {
-      type: String,
-      default: 'name'
-    },
     placeholder: {
       type: String,
-      default: '输入表单项'
+      default: '请输入'
     },
     currWidget: {
       type: Object,

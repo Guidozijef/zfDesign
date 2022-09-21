@@ -7,7 +7,7 @@
 </template>
 
 <script setup name="zf-designer">
-import { ref, reactive } from 'vue'
+import { ref, reactive, defineExpose } from 'vue'
 import WidgetContainer from './widget-container'
 import RenderContainer from './render-container'
 import ConfigContainer from './config-container'
@@ -20,6 +20,14 @@ let toggle = (value) => {
 let compPanelWidth = 250
 
 let currSelectComp = reactive({ data: {}})
+
+let emitPage = () => {
+  console.log('预览页面')
+}
+
+defineExpose({
+  emitPage
+})
 
 </script>
 

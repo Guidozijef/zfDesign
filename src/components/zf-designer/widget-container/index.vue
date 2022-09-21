@@ -41,7 +41,7 @@ const handlerClick = () => {
     position: absolute;
     float: left;
     width: 250px;
-    height: 100%;
+    height: calc(100% - 24px);
     box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
     .toggle-button{
       position: absolute;
