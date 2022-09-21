@@ -1,5 +1,5 @@
 <template>
-  <div class="render-container" :style="{ marginLeft: `${isExtend ? compPanelWidth + 12 : 0}px` }">
+  <div class="render-container" :style="{ marginLeft: `${isExtend ? compPanelWidth : 0}px` }">
     <div class="page-canvas" ref="canvas">
       <n-scrollbar style="max-height: 724px">
         <draggable-item
@@ -72,10 +72,10 @@ watch(() => currSelectComp.value.id, (id) => {
   transition: all 0.3s ease;
   height: 100%;
   position: relative;
+  box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
   .page-canvas {
     width: 100%;
     height: 100%;
-    box-shadow: 0 1px 4px 0 rgb(31 50 88 / 13%);
     background: #fff;
     .page-borders-container {
       bottom: 0;

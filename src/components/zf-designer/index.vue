@@ -26,6 +26,7 @@ let currSelectComp = reactive({ data: {}})
 <style lang="scss" scoped>
 .designer-selection{
   overflow: hidden;
+  // display: flex;
   position: relative;
   height: 100%;
   padding: 12px;

@@ -8,7 +8,7 @@
         模版
       </n-tab-pane>
     </n-tabs>
-    <div class="toggle-button" :style="{ transform: `translate3d(calc(50% + ${isExtend ? 0 : 4}px), -50%, 0)` }" @click="handlerClick">
+    <div class="toggle-button" :style="{ transform: `translate3d(calc(50% + ${isExtend ? 0 : 14}px), -50%, 0)` }" @click="handlerClick">
       <i class="btn-show" :style="{ transform: `rotate(${isExtend ? 180 : 0}deg)`}" ></i>
     </div>
   </div>
@@ -38,7 +38,7 @@ const handlerClick = () => {
   .widget-container{
     background: #fff;
     transition: all 0.3s ease;
-    position: relative;
+    position: absolute;
     float: left;
     width: 250px;
     height: 100%;
