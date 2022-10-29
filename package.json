@@ -25,6 +25,7 @@
     "naive-ui": "^2.33.2",
     "node-sass": "^7.0.1",
     "prettier": "^2.7.1",
+    "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.54.7",
     "sass-loader": "^13.0.2",
     "vite": "^3.0.4",

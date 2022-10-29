@@ -9,16 +9,16 @@
           :parent-widget="null"
         ></draggable-item>
       </n-scrollbar>
-      <!-- 包裹选中组件边框和移入样式的容器 -->
+      <!-- TODO: 包裹选中组件边框和移入样式的容器 -->
       <div class="page-borders-container borders-tools" ref="borderContainer"></div>
     </div>
   </div>
 </template>
 
 <script setup name="render-container">
-import { reactive, ref, watch, onMounted, onBeforeUnmount, defineEmits } from 'vue';
+import { reactive, ref, watch, defineEmits } from 'vue';
 import DraggableItem from './draggableItem';
-import { setupEvents, clearEvents, currSelectCompId, findCurrWidgetById } from './utils';
+import useCurrSelectComp from './hooks'
 
 defineProps({
   isExtend: {
@@ -35,34 +35,16 @@ const emit = defineEmits(['currSelectComp'])
 
 let canvas = ref('');
 let borderContainer = ref('');
-
-onMounted(() => {
-  // TODO:注册鼠标移入、移出、点击等事件
-  setupEvents(canvas.value, borderContainer.value, widgetList.data)
-});
-
-onBeforeUnmount(() => {
-  // 注销鼠标移入、移出、点击等事件
-  clearEvents(canvas.value)
-});
-
 let widgetList = reactive({ data: [] });
 
-let currSelectComp = ref({});
+// FIXME: 这里这几个参数不能直接，canvas.value、borderContainer.value、widgetList.data，这样对DOM元素来说不是响应式，到hooks里面获取不到DOM元素
+let { currSelectComp } = useCurrSelectComp(canvas, borderContainer, widgetList)
 
-// TODO:监听当前点击的组件的id，根据当前节点的id查询当前组件数据
-watch(() => currSelectCompId.value, (id) => {
-  currSelectComp.value = findCurrWidgetById(widgetList.data, id)
-  // console.log(currSelectComp.value)
-  emit('currSelectComp', currSelectComp.value)
+// // TODO:监听当前点击的组件，传递给上级
+watch(() => currSelectComp.value, (value) => {
+  emit('currSelectComp', value)
 })
 
-watch(() => currSelectComp.value.id, (id) => {
-  if (!id) {
-    let borderDom = borderContainer.value.querySelector('.item-borders-selecting');
-    borderDom && borderContainer.value.removeChild(borderDom);
-  }
-})
 
 </script>
 
