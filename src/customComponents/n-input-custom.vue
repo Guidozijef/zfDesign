@@ -1,17 +1,19 @@
 <template>
-  <!-- <n-form-item :label="label" :path="path"> parentWidget.options.model[path] -->
-    <n-input v-model:value="formModel[path]" :placeholder="placeholder" />
-  <!-- </n-form-item> -->
+    <n-input v-model:value="value" :placeholder="placeholder" :readonly="readonly" :clearable="clearable" :disabled="disabled" :show-count="showCount" :maxlength="maxlength" :minlength="minlength" />
 </template>
 
 <script setup name="NInputCustom">
 import { defineProps, ref, toRefs, onMounted, computed } from 'vue'
 
 let props = defineProps({
-    placeholder: {
-      type: String,
-      default: '请输入'
-    },
+    placeholder: String,
+    value: String,
+    clearable: Boolean,
+    disabled: Boolean,
+    readonly: Boolean,
+    maxlength: Number,
+    minlength: Number,
+    showCount: Boolean,
     currWidget: {
       type: Object,
       default: () => ({})

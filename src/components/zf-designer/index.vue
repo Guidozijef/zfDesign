@@ -2,7 +2,7 @@
   <div class="designer-selection">
     <widget-container @toggle="toggle" :compPanelWidth="compPanelWidth"></widget-container>
     <config-container :compPanelWidth="compPanelWidth" :currSelectComp="currSelectComp.data"></config-container>
-    <render-container :isExtend="isExtend" :compPanelWidth="compPanelWidth" @currSelectComp="comp => currSelectComp.data = comp"></render-container>
+    <render-container ref="render" :isExtend="isExtend" :compPanelWidth="compPanelWidth" @currSelectComp="comp => currSelectComp.data = comp"></render-container>
   </div>
 </template>
 
@@ -20,9 +20,11 @@ let toggle = (value) => {
 let compPanelWidth = 250
 
 let currSelectComp = reactive({ data: {}})
+let render = ref('')
 
 let emitPage = () => {
   console.log('预览页面')
+  console.log(render.value.widgetList.data)
 }
 
 defineExpose({

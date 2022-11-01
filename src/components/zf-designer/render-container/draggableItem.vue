@@ -94,7 +94,7 @@ const emit = defineEmits(["selectCurrComponent", "hoverCurrComponent"]);
 
 
 let onGridDragEnd = evt => {
-  console.log("end", evt, props.widgetList.data);
+  // console.log("end", evt, props.widgetList.data);
 };
 
 // 复制组件
@@ -123,7 +123,7 @@ let handlerCurrSelectComp = (value) => {
 }
 
 let onGridDragAdd = evt => {
-  console.log("add", evt, props.parentWidget);
+  // console.log("add", evt, props.parentWidget);
   // TODO: 这里需要判断是从组件库拖拽加进来的才进行添加，因为模版内拖拽只是移动位置了，不需要再次进行添加了
   let { element } = evt.item.__draggable_context;
   if (evt.pullMode === "clone") {

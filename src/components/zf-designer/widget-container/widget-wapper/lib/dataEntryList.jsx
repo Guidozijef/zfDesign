@@ -96,9 +96,14 @@ export default [
         type: 'input',
       },
       {
+        name: '行内表单',
+        key: 'inline',
+        type: 'switch',
+      },
+      {
         name: '标签宽度',
         key: 'labelWidth',
-        type: 'number-input',
+        type: 'input',
       },
       {
         name: '对齐方式',
@@ -112,6 +117,21 @@ export default [
           {
             value: 'top',
             label: 'top'
+          },
+        ],
+      },
+      {
+        name: '标签对齐',
+        key: 'labelAlign',
+        type: 'select',
+        options: [
+          {
+            value: 'left',
+            label: 'left'
+          },
+          {
+            value: 'right',
+            label: 'right'
           },
         ],
       },
@@ -136,21 +156,13 @@ export default [
       },
     ],
     props: {
-      labelWidth: 70,
+      labelWidth: '70',
       formRef: ref('formRef'),
       inline: true,
-      model: reactive({
-        name: ""
-      }),
-      rules: {
-        name: {
-          required: true,
-          message: "请输入姓名",
-          trigger: "blur"
-        }
-      },
+      model: reactive({}),
       size: "small",
-      labelPlacement: 'left'
+      labelPlacement: 'left',
+      labelAlign: 'left'
     },
     children: reactive({
       data: [
@@ -165,20 +177,67 @@ export default [
           props: {
             label: "表单项",
             path: "name",
-            placeholder: '输入表单项'
+            labelWidth: '70',
+            showLabel: true,
+            showRequireMark: true,
+            requireMarkPlacement: 'left',  // 'left' | 'right' | 'right-hanging'
+            rules: {
+              name: {
+                required: true,
+                message: "请输入姓名",
+                trigger: "blur"
+              }
+            },
           },
           options: [
             {
               name: 'label',
               key: 'label',
               type: 'input',
-              defaultValue: '表单项'
             },
             {
               name: '字段路径',
               key: 'path',
               type: 'input',
-              defaultValue: ''
+            },
+            {
+              name: '标签宽度',
+              key: 'labelWidth',
+              type: 'input',
+            },
+            {
+              name: '是否显示标签',
+              key: 'showLabel',
+              type: 'switch',
+            },
+            {
+              name: '必填标记',
+              key: 'showRequireMark',
+              type: 'switch',
+            },
+            {
+              name: '标记位置',
+              key: 'requireMarkPlacement',
+              type: 'select',
+              options: [
+                {
+                  value: 'left',
+                  label: 'left'
+                },
+                {
+                  value: 'right',
+                  label: 'right'
+                },
+                // {
+                //   value: 'right-hanging',
+                //   label: 'right-hanging'
+                // }
+              ]
+            },
+            {
+              name: '校验规则',
+              key: 'rule',
+              type: 'textarea',
             },
           ],
           children: reactive({
@@ -191,35 +250,53 @@ export default [
                 id: guid(),
                 isInline: true,
                 props: {
-                  label: "表单项",
-                  path: "name",
-                  placeholder: '请输入'
+                  placeholder: '请输入',
+                  value: "",
+                  clearable: ref(true),
+                  disabled: ref(false),
+                  // readonly: ref(true),
+                  showCount: ref(false)
                 },
                 options: [
                   {
-                    name: '字段',
-                    key: 'path',
+                    name: '当前值',
+                    key: 'value',
                     type: 'input',
                   },
                   {
-                    name: '大小',
-                    key: 'size',
-                    type: 'select',
-                    options: [
-                      {
-                        value: 'large',
-                        label: '大'
-                      },
-                      {
-                        value: 'medium',
-                        label: '中'
-                      },
-                      {
-                        value: 'small',
-                        label: '小'
-                      },
-                    ],
-                    defaultValue: 'small'
+                    name: '占位提示',
+                    key: 'placeholder',
+                    type: 'input',
+                  },
+                  {
+                    name: '是否清除',
+                    key: 'clearable',
+                    type: 'switch',
+                  },
+                  {
+                    name: '是否只读',
+                    key: 'readonly',
+                    type: 'switch',
+                  },
+                  {
+                    name: '是否禁用',
+                    key: 'disabled',
+                    type: 'switch',
+                  },
+                  {
+                    name: '是否计数',
+                    key: 'showCount',
+                    type: 'switch',
+                  },
+                  {
+                    name: '最大输入长度',
+                    key: 'maxlength',
+                    type: 'number-input',
+                  },
+                  {
+                    name: '最小输入长度',
+                    key: 'minlength',
+                    type: 'number-input',
                   },
                 ],
               }

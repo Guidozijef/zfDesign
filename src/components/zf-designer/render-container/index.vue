@@ -16,7 +16,7 @@
 </template>
 
 <script setup name="render-container">
-import { reactive, ref, watch, defineEmits } from 'vue';
+import { reactive, ref, watch, defineEmits, defineExpose } from 'vue';
 import DraggableItem from './draggableItem';
 import useCurrSelectComp from './hooks'
 
@@ -41,8 +41,12 @@ let widgetList = reactive({ data: [] });
 let { currSelectComp } = useCurrSelectComp(canvas, borderContainer, widgetList)
 
 // // TODO:监听当前点击的组件，传递给上级
-watch(() => currSelectComp.value, (value) => {
+watch(currSelectComp, (value) => {
   emit('currSelectComp', value)
+})
+
+defineExpose({
+  widgetList
 })
 
 

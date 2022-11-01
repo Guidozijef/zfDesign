@@ -1,5 +1,5 @@
 <template>
-  <n-form-item :label="label" :path="path">
+  <n-form-item :label="label" :path="path" :show-label="showLabel" :rule="rule" :show-require-mark="showRequireMark" :require-mark-placement="requireMarkPlacement" :label-width="labelWidth">
     <slot></slot>
   </n-form-item>
 </template>
@@ -12,10 +12,12 @@ let props = defineProps({
       type: String,
       default: '表单项'
     },
-    path: {
-      type: String,
-      default: 'name'
-    },
+    path: String,
+    labelWidth: [Number, String, 'auto'],  // number | string | 'auto'
+    showLabel: Boolean,
+    rule: Object,
+    showRequireMark: Boolean,
+    requireMarkPlacement: String,
     currWidget: {
       type: Object,
       default: () => ({})

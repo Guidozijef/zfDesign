@@ -21,9 +21,10 @@ export default [
     type: "",
     id: guid(),
     isInline: true,
-    options: {
+    props: {
       context: "按钮",
-      type: "primary"
+      type: "primary",
+      context: "查询"
     }
   },
   {

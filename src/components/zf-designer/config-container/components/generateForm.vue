@@ -47,7 +47,6 @@
         <n-switch
           v-if="item.type === 'switch'"
           v-model:value="formData[item.key]"
-          @update:value="item.handleChange"
           :disabled="item.disabled"
         />
       </n-form-item>

@@ -1,5 +1,5 @@
 <template>
-  <n-scrollbar style="max-height: 670px">
+  <n-scrollbar style="max-height: calc(100% - 105px)">
     <div style="padding:0 12px">
       <n-collapse arrow-placement="right" :default-expanded-names="[0]">
         <n-collapse-item v-for="item in collapseList" :key="item.key" :title="item.collapseName" :name="item.key">
@@ -21,10 +21,10 @@ import draggable from 'vuedraggable'
 import collapseList from './lib'
 import WidgetItem from './widget-item'
 let handleContainerWidgetClone = (origin) => {
-    console.log('clone', origin)
+    // console.log('clone', origin)
 }
 let checkContainerMove = (evt) => {
-    console.log('move', evt)
+    // console.log('move', evt)
 }
 let onContainerDragEnd = () => {
 
