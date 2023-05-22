@@ -1,6 +1,6 @@
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
 import ResizeObserver from 'resize-observer-polyfill';
-import { generatorBorderNode, createdNode, findCurrWidgetById } from './utils';
+import { generatorBorderNode, createdNode, findCurrWidgetById } from '@/utils';
 
 export default function useCurrSelectComp(doc, container, widgetList) {
   let currSelectComp = ref({});

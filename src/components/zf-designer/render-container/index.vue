@@ -18,7 +18,7 @@
 <script setup name="render-container">
 import { reactive, ref, watch, defineEmits, defineExpose } from 'vue';
 import DraggableItem from './draggableItem';
-import useCurrSelectComp from './hooks'
+import { useCurrSelectComp } from '@/hooks'
 
 defineProps({
   isExtend: {
